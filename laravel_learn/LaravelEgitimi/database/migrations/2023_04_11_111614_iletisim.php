@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bilgiler', function (Blueprint $table) {
+        Schema::create('iletisim', function (Blueprint $table) {
             $table->id();
-            $table->text('metin',300)->nullable();
+            $table->string("adsoyad")->nullable();
+            $table->string("mail")->nullable();
+            $table->string("telefon")->nullable();
+            $table->string("metin")->nullable();
             $table->timestamps();
         });
     }
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bilgiler');
+        Schema::dropIfExists('iletisim');
     }
 };
