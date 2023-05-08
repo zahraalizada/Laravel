@@ -1,6 +1,6 @@
 <!-- Main Content-->
 @extends('front.layouts.master')
-@section('title', 'Home')
+@section('title', $category->name." Kategorisi")
 @section('content')
 
     @include('front.widgets.articleList')
