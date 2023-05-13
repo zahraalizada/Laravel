@@ -17,6 +17,7 @@ class AuthController extends Controller
     // postdan gelen email sifrenin dogruluguna gore login yonlendirme function
     public function loginPost(Request $request){
         if (Auth::attempt(['email'=>$request->email, 'password'=>$request->password])){
+            toastr()->success("Tekrardan hosgeldiniz ".Auth::user()->name);
             return redirect()->route("admin.dashboard");
         }
         return redirect()->route('admin.login')->withErrors('Email ve ya Sifre hatali!'); // login zamani sifre ve ya email hatasi yakalama
