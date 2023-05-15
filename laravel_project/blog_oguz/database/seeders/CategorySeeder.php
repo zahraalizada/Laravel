@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
     {
         // Database-de categories table-i doldurmaq ucun array yaradib datalari gonderirik
 
-        $categories = ['Eglence', 'Bilisim', 'Gezi', 'Teknoloji', 'Saglik', 'Spor', 'Gunluk Yasam'];
+        $categories = ['Genel','Eglence', 'Bilisim', 'Gezi', 'Teknoloji', 'Saglik', 'Spor', 'Gunluk Yasam'];
         foreach ($categories as $category) {
             DB::table('categories')->insert([
                 'name' => $category,

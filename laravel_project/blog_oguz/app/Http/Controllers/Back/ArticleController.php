@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\File;
 
 class ArticleController extends Controller
 {
@@ -109,8 +110,40 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    public function delete($id){
+        Article::find($id)->delete();
+        toastr()->success('Makale Geridonusume tasindi');
+        return redirect()->route('admin.makaleler.index');
+    }
+
+    public function trashed(){
+        $articles =Article::onlyTrashed()->orderBy('deleted_at','desc')->get();
+        return view('back.articles.trashed',compact('articles'));
+    }
+
+    public function recover($id){
+        Article::onlyTrashed()->find($id)->restore();
+        toastr()->success('Makale restore olundu');
+        return redirect()->route('admin.makaleler.index');
+    }
+
+    public function hardDelete($id){
+
+        $article = Article::onlyTrashed()->find($id);
+        if ($article && $article->image) {
+            $imagePath = public_path($article->image);
+            if (File::exists($imagePath)) {
+                File::delete($imagePath);
+            }
+        }
+
+        $article->forceDelete();
+        toastr()->success('Makale tamemen silindi');
+        return redirect()->route('admin.trashed.article');
+    }
+
     public function destroy(string $id)
     {
-       //
+
     }
 }

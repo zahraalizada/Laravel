@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <title>@yield('title', 'Blog Sitesi Yonetim Paneli') </title>
-
+    @notifyCss
     <!-- Custom fonts for this template-->
     <link href="{{asset('back/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link
