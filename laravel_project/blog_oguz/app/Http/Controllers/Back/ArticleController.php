@@ -51,7 +51,7 @@ class ArticleController extends Controller
             $article->image='/uploads/'.$imageName;
         }
         $article->save();
-        toastr()->success('Basariyla kayd edildi!');
+        notify()->success('Basariyla kayd edildi!');
         return redirect()->route('admin.makaleler.index');
 
     }
@@ -97,7 +97,7 @@ class ArticleController extends Controller
             $article->image='uploads/'.$imageName;
         }
         $article->save();
-        toastr()->success('Basarili','Basariyla guncellendi!');
+        notify()->success('Basarili','Basariyla guncellendi!');
         return redirect()->route('admin.makaleler.index');
     }
 
@@ -112,7 +112,7 @@ class ArticleController extends Controller
      */
     public function delete($id){
         Article::find($id)->delete();
-        toastr()->success('Makale Geridonusume tasindi');
+        notify()->success('Makale Geridonusume tasindi');
         return redirect()->route('admin.makaleler.index');
     }
 
@@ -123,7 +123,7 @@ class ArticleController extends Controller
 
     public function recover($id){
         Article::onlyTrashed()->find($id)->restore();
-        toastr()->success('Makale restore olundu');
+        notify()->success('Makale restore olundu');
         return redirect()->route('admin.makaleler.index');
     }
 
@@ -138,7 +138,7 @@ class ArticleController extends Controller
         }
 
         $article->forceDelete();
-        toastr()->success('Makale tamemen silindi');
+        notify()->success('Makale tamemen silindi');
         return redirect()->route('admin.trashed.article');
     }
 

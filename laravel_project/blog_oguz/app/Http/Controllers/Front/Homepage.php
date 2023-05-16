@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use http\Message;
 use Illuminate\Http\Request;
+use Mail;
 use Validator;
 
 // Models
@@ -13,12 +14,16 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Contact;
+use App\Models\Config;
 
 
 class Homepage extends Controller
 {
     public function __construct()
     {
+        if(Config::find(1)->active==0){
+            return redirect()->to('site-bakimda')->send();
+        }
         //share ile datayi tum viewlere gonderiyoruz
         view()->share('pages', Page::orderBy('order', 'ASC')->get());
         view()->share('categories', Category::inRandomOrder()->get());
@@ -75,12 +80,38 @@ class Homepage extends Controller
             return redirect()->route('contact')->withErrors($validate)->withInput();
         }
 
-        $contact = new Contact;
-        $contact->name = $request->name;
-        $contact->email = $request->email;
-        $contact->topic = $request->topic;
-        $contact->message = $request->message;
-        $contact->save();
+//        Mail::send([],[],function ($message) use($request){
+//            $message->from('iletisim@blogsitesi.com','Blog sitesi');
+//            $message->to('furkan@gmail.com');
+//            $message->setBody(' Mesaji Gonderen: '. $request->name.'<br>
+//                    Mesaji Gonderen Mail : ' .$request->email.'<br>
+//                    Mesaj Konusu: ' . $request->topic.'<br>
+//                    Mesaj : '.$request->message.'<br><br>
+//                    Mesaj gonderilme tarihi: '.$request->created_at.'','text/html');
+//            $message->subject($request->name. ' iletisimden mesaj gonderdi!');
+//        });
+
+
+        Mail::raw(' Mesaji Gonderen: '. $request->name.'<br>
+                    Mesaji Gonderen Mail : ' .$request->email.'<br>
+                    Mesaj Konusu: ' . $request->topic.'<br>
+                    Mesaj : '.$request->message.'<br><br>
+                    Mesaj gonderilme tarihi: '.now().'',function ($message) use($request){
+            $message->from('iletisim@blogsitesi.com','Blog sitesi');
+            $message->to('furkan@gmail.com');
+            $message->subject($request->name. ' iletisimden mesaj gonderdi!');
+        });
+
+
+
+
+
+//        $contact = new Contact;
+//        $contact->name = $request->name;
+//        $contact->email = $request->email;
+//        $contact->topic = $request->topic;
+//        $contact->message = $request->message;
+//        $contact->save();
         return redirect()->route('contact')->with('success', 'Mesajiniz basariyla iletildi. Tesekkur ederiz!');
     }
 
