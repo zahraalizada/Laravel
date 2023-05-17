@@ -25,13 +25,16 @@ class Homepage extends Controller
             return redirect()->to('site-bakimda')->send();
         }
         //share ile datayi tum viewlere gonderiyoruz
-        view()->share('pages', Page::orderBy('order', 'ASC')->get());
-        view()->share('categories', Category::inRandomOrder()->get());
+        view()->share('pages', Page::where('status',1)->orderBy('order', 'ASC')->get());
+        view()->share('categories', Category::where('status',1)->inRandomOrder()->get());
     }
 
     public function index()
     {
-        $data['articles'] = Article::orderBy('created_at', 'DESC')->paginate(3);// articllari tarixe gore siralayiriq, paginate ile seyfeleyirik
+        $data['articles'] = Article::with('getCategory')->where('status',1)->whereHas('getCategory',function($query){
+            $query->where('status',1);
+    })->orderBy('created_at', 'DESC')->paginate(5);// articllari tarixe gore siralayiriq, paginate ile seyfeleyirik
+
         return view('front.homepage', $data);
     }
 
@@ -48,7 +51,7 @@ class Homepage extends Controller
     {
         $category = Category::whereSlug($slug)->first() ?? abort(403, 'Boyle bir kategori bulunamadi');
         $data['category'] = $category;
-        $data['articles'] = Article::where('category_id', $category->id)->orderBy('created_at', 'DESC')->paginate(1);
+        $data['articles'] = Article::where('category_id', $category->id)->where('status',1)->orderBy('created_at', 'DESC')->paginate(1);
         return view('front.category', $data);
 
     }

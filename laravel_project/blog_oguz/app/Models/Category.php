@@ -12,6 +12,6 @@ class Category extends Model
 //    Her kategoriye ait kac tane makale oldugunu sayan fonksyon
     public function articleCount(){
                    // Baglanacagimiz model, Baglanacagimiz sutun, Baglanacak id
-        return $this->hasMany('App\Models\Article','category_id','id')->count();
+        return $this->hasMany('App\Models\Article','category_id','id')->where('status',1)->count();
     }
 }
