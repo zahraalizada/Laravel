@@ -55,7 +55,7 @@
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$category}}</div>
                                 </div>
-                            
+
                             </div>
                         </div>
                         <div class="col-auto">
