@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="486ae4b4-f9cf-4128-83fa-9a91423ea7ab" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1ajKKiIJWBADC7isDfZTXzCqmjV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.data.extractors.current.id" value="Comma-separated (CSV)_id" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kinga\OneDrive\Masaüstü\laravel kurs\backend-theme" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="blog-add.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/./blog-add.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.blog-add.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="486ae4b4-f9cf-4128-83fa-9a91423ea7ab" name="Default Changelist" comment="" />
+      <created>1587243500987</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587243500987</updated>
+      <workItem from="1587243504075" duration="18000" />
+      <workItem from="1587243575052" duration="9015000" />
+      <workItem from="1587299992619" duration="17948000" />
+      <workItem from="1587387554844" duration="5481000" />
+      <workItem from="1587582273503" duration="926000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="551" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587330252459">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state x="551" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1030@0.0.1920.1030" timestamp="1587330252459" />
+    <state width="1864" height="318" key="GridCell.Tab.0.bottom" timestamp="1587338545284">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.0.bottom/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545284" />
+    <state width="1864" height="318" key="GridCell.Tab.0.center" timestamp="1587338545283">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.0.center/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545283" />
+    <state width="1864" height="318" key="GridCell.Tab.0.left" timestamp="1587338545282">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.0.left/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545282" />
+    <state width="1864" height="318" key="GridCell.Tab.0.right" timestamp="1587338545283">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.0.right/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545283" />
+    <state width="1864" height="318" key="GridCell.Tab.1.bottom" timestamp="1587338545284">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.1.bottom/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545284" />
+    <state width="1864" height="318" key="GridCell.Tab.1.center" timestamp="1587338545284">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.1.center/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545284" />
+    <state width="1864" height="318" key="GridCell.Tab.1.left" timestamp="1587338545284">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.1.left/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545284" />
+    <state width="1864" height="318" key="GridCell.Tab.1.right" timestamp="1587338545284">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.1.right/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545284" />
+    <state width="1864" height="318" key="GridCell.Tab.2.bottom" timestamp="1587338545285">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.2.bottom/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545285" />
+    <state width="1864" height="318" key="GridCell.Tab.2.center" timestamp="1587338545285">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.2.center/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545285" />
+    <state width="1864" height="318" key="GridCell.Tab.2.left" timestamp="1587338545285">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.2.left/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545285" />
+    <state width="1864" height="318" key="GridCell.Tab.2.right" timestamp="1587338545285">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="1864" height="318" key="GridCell.Tab.2.right/0.0.1920.1030@0.0.1920.1030" timestamp="1587338545285" />
+    <state width="263" height="571" key="HiddenNamespacesPopup" timestamp="1587329414147">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state width="263" height="571" key="HiddenNamespacesPopup/0.0.1920.1030@0.0.1920.1030" timestamp="1587329414147" />
+    <state x="612" y="178" width="675" height="655" key="StructurePopup" timestamp="1587328631787">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state x="612" y="178" width="675" height="655" key="StructurePopup/0.0.1920.1030@0.0.1920.1030" timestamp="1587328631787" />
+    <state x="1106" y="150" width="716" height="662" key="find.popup" timestamp="1587390177700">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state x="1106" y="150" width="716" height="662" key="find.popup/0.0.1920.1030@0.0.1920.1030" timestamp="1587390177700" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../../../../../../../xampp/htdocs/karabayyazilim-orjinal-cpanel/resources/views/backend/blog-ekle.blade.php</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
