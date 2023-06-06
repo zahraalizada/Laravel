@@ -1,9 +1,19 @@
 @extends('layouts.admin')
-@section('title') Yeni Egitim Ekleme @endsection
+
+@php
+    if($education){
+        $educationText='Egitim Duzenleme';
+}
+    else{
+        $educationText='Yeni Egitim Ekleme';
+    }
+@endphp
+
+@section('title') {{$educationText}} @endsection
 @section('css') @endsection
 @section('content')
     <div class="page-header">
-        <h3 class="page-title"> Yeni Egitim Ekleme </h3>
+        <h3 class="page-title"> {{$educationText}} </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Admin Panel</a></li>
@@ -19,10 +29,13 @@
                 <div class="card-body">
                     <form class="forms-sample" id="createEducationForm" action="" method="POST">
                         @csrf
+                        @if($education)
+                            <input type="hidden" name="educationID" value="{{$education->id}}">
+                        @endif
                         <div class="form-group">
                             <label for="education_date">Egitim Tarihi</label>
                             <input type="text" class="form-control" id="education_date" name="education_date"
-                                   placeholder="Username">
+                                   placeholder="Egitim Tarihi" value="{{$education ? $education->education_date : ''}}">
                             <p><small class="text-muted">Ornegin: 2012-2017</small></p>
                             @error('education_date')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -31,7 +44,7 @@
                         <div class="form-group">
                             <label for="university_name">Universite Adi</label>
                             <input type="email" class="form-control" id="university_name" name="university_name"
-                                   placeholder="Email">
+                                   placeholder="Email" value="{{$education ? $education->university_name : ''}}" >
                             @error('university_name')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -39,7 +52,7 @@
                         <div class="form-group">
                             <label for="university_branch">Universite Bolum</label>
                             <input type="email" class="form-control" id="university_branch" name="university_branch"
-                                   placeholder="Universite Bolum">
+                                   placeholder="Universite Bolum" value="{{$education ? $education->university_branch : ''}}">
                             @error('university_branch')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -47,13 +60,21 @@
                         <div class="form-group">
                             <label for="description">Aciklama </label>
                             <textarea cols="30" rows="7" class="form-control" id="description" name="description"
-                                      placeholder="Aciklama"></textarea>
+                                      placeholder="Aciklama"> {{$education ? $education->description : ''}}</textarea>
                         </div>
                         <div class="form-group">
                             <div class="form-check form-check-success">
+                                <?php
+                                    if ($education){
+                                        $checkStatus = $education->status ? "checked" : '';
+                                    } else{
+                                        $checkStatus = '';
+                                    }
+                                ?>
                                 <label class="form-check-label" for="status">
-                                    <input type="checkbox" name="status" id="status" class="form-check-input" checked>
-                                    Egitim Anasayfada Gosterilsin </label>
+                                    <input type="checkbox" name="status" id="status" class="form-check-input" {{$checkStatus}}>
+                                    Egitim Anasayfada Gosterilsin
+                                </label>
                             </div>
                         </div>
                         <button type="button" class="btn btn-primary me-2" id="createButton">Kaydet</button>

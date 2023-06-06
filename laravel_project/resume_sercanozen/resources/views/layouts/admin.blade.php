@@ -4,10 +4,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <title>@yield('title')</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendors/@fortawesome/fontawesome-free/css/all.css')}}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End Plugin css for this page -->
@@ -18,6 +20,7 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}"/>
     <link rel="stylesheet" href="{{asset('assets/sweet-alert/sweetalert2.min.css')}}">
+    @include('sweetalert::alert')
 
     <style>
         .swal2-modal .swal2-title{
@@ -50,7 +53,7 @@
                             <span class="count bg-success"></span>
                         </div>
                         <div class="profile-name">
-                            <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
+                            <h5 class="mb-0 font-weight-normal">{{auth()->user()->name}}</h5>
                             <span>Gold Member</span>
                         </div>
                     </div>
@@ -105,11 +108,17 @@
                 </a>
             </li>
 
-
             <li class="nav-item menu-items">
                 <a class="nav-link" href="{{route('admin.education.list')}}">
                     <span class="menu-icon"> <i class="mdi mdi-playlist-play"></i> </span>
                     <span class="menu-title">Egitim Bilgileri</span>
+                </a>
+            </li>
+
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="{{route('admin.experience.list')}}">
+                    <span class="menu-icon"> <i class="mdi mdi-playlist-play"></i> </span>
+                    <span class="menu-title">Deenyim Bilgileri</span>
                 </a>
             </li>
 
@@ -284,7 +293,7 @@
                         <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                             <div class="navbar-profile">
                                 <img class="img-xs rounded-circle" src="../../assets/images/faces/face15.jpg" alt="">
-                                <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                                <p class="mb-0 d-none d-sm-block navbar-profile-name">{{auth()->user()->name}}</p>
                                 <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                             </div>
                         </a>
