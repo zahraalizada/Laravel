@@ -28,6 +28,7 @@
                                 <th>#</th>
                                 <th>Duzenle</th>
                                 <th>Sil</th>
+                                <th>Siralama</th>
                                 <th>Calisma Tarihi</th>
                                 <th>Pozisyon</th>
                                 <th>Firma</th>
@@ -46,6 +47,8 @@
                                                 class="fa fa-edit "></i></a></td>
                                     <td><a data-id="{{$item->id}}" href="javascript:void(0)" class="btn btn-danger deleteExperience"><i
                                                 class="fa fa-trash "></i></a></td>
+
+                                    <td>{{$item->order}}</td>
                                     <td>{{$item->date}}</td>
                                     <td>{{$item->task_name}}</td>
                                     <td>{{$item->company_name}}</td>

@@ -28,6 +28,7 @@
                                 <th>#</th>
                                 <th>Duzenle</th>
                                 <th>Sil</th>
+                                <th>Siralama</th>
                                 <th>Egitim Tarihi</th>
                                 <th>Universite</th>
                                 <th>Bolum</th>
@@ -45,6 +46,7 @@
                                                 class="fa fa-edit "></i></a></td>
                                     <td><a data-id="{{$item->id}}" href="javascript:void(0)" class="btn btn-danger deleteEducation"><i
                                                 class="fa fa-trash "></i></a></td>
+                                    <td>{{$item->order}}</td>
                                     <td>{{$item->education_date}}</td>
                                     <td>{{$item->university_name}}</td>
                                     <td>{{$item->university_branch}}</td>

@@ -30,6 +30,7 @@ class ExperienceController extends Controller
     {
         $status = 0;
         $active = 0;
+        $order = $request->order;
         if (isset($request->status)) {
             $status = 1;
         }
@@ -44,7 +45,8 @@ class ExperienceController extends Controller
                 "company_name" => $request->company_name,
                 "description" => $request->description,
                 "status" => $status,
-                "active" => $active
+                "active" => $active,
+                "order" => $order ? $order : 999
             ]);
 
             alert()->success('Guncellendi', $id.' id-li Deneyim bilgisi guncellendi')->showConfirmButton('Tamam', '#3085d6')->persistent(true, true);
@@ -60,7 +62,8 @@ class ExperienceController extends Controller
                 "company_name" => $request->company_name,
                 "description" => $request->description,
                 "status" => $status,
-                "active" => $active
+                "active" => $active,
+                "order" => $order ? $order : 999
             ]);
 
             alert()->success('Basarili', 'Deneyim bilgisi eklendi')->showConfirmButton('Tamam', '#3085d6')->persistent(true, true);

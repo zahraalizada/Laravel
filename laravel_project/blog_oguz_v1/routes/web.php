@@ -1,0 +1,24 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+/*
+    * Route::get - sayfanin link kismindaki alani kast ediyor
+    * '/' - bos slash anasayfada acilacak anlamina geliyor
+    * return view('front.homepage'); - fonksiyon calistigi zaman resources->views klasorunde bulunan front->homepage.blade.php dosyasini cagiriyor
+ */
+
+Route::get('/', function () {
+    return view('front.homepage');
+});

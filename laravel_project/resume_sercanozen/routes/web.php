@@ -13,6 +13,8 @@ Route::get('/contact','App\Http\Controllers\FrontController@contact')->name('con
 //Route::get('/login',function (){ return view('admin.login'); })->name('admin.login');
 
 Route::prefix('admin')->middleware('auth')->group(function(){
+
+    // Education routes
     Route::get('/','App\Http\Controllers\AdminController@index')->name('admin.index');
     Route::get('/education-list','App\Http\Controllers\EducationController@list')->name('admin.education.list');
     Route::post('/education-change-status','App\Http\Controllers\EducationController@changeStatus')->name('admin.education.changeStatus');
@@ -28,6 +30,10 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::post('/experience-delete','App\Http\Controllers\ExperienceController@delete')->name('admin.experience.delete');
     Route::get('/experience-add','App\Http\Controllers\ExperienceController@addShow')->name('admin.experience.add');
     Route::post('/experience-add','App\Http\Controllers\ExperienceController@add');
+
+    // Personal Information routes
+    Route::get('personal-information','App\Http\Controllers\PersonalInformationController@index')->name('perosnalInformation.index');
+    Route::post('personal-information','App\Http\Controllers\PersonalInformationController@update');
 
 });
 

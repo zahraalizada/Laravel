@@ -63,6 +63,14 @@
                                       placeholder="Aciklama"> {{$experience ? $experience->description : ''}}</textarea>
                         </div>
                         <div class="form-group">
+                            <label for="order">Goruntulenecek Deneyim Sirasi </label>
+                            <input type="email" class="form-control" id="order" name="order"
+                                   placeholder="Goruntulenecek Deneyim Sirasi " value="{{$experience ? $experience->order : ''}}">
+                            @error('order')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <div class="form-check form-check-success">
                                 <?php
                                     if ($experience){
@@ -77,7 +85,6 @@
                                 </label>
                             </div>
                         </div>
-
 
                         <div class="form-group">
                             <div class="form-check form-check-success">
