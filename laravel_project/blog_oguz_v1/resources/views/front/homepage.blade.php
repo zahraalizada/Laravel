@@ -1,13 +1,15 @@
 {{-- master.blade.php dosyasi extend oldugu icin oradaki yapi calisicak --}}
 @extends('front.layouts.master')
 {{--
-    header.blade.php dosyasinda @yield('content') ile belirtdiyimiz alani kullanmak icin
-    (@section('title') Ornek baslik ismi @endsection) - kod araligini kullaniyoruz 
+    header.blade.php dosyasinda @yield('content') ile belirtdiyimiz alani kullanmak icin asagidaki metodlari kullana biliriz:
+    - (@section('title') Ornek_Baslik_Ismi @endsection)
+    - @section('title','Ornek_Baslik_Ismi')
 --}}
-@section('title') Anasayfa @endsection
+@section('title','Anasayfa')
 {{-- master.blade.php dosyasinda @yield('content') ile belirtdiyimiz alana ekleme yapmak icin @section('alan adi')-@endsection kod araligini kullaniyoruz --}}
 @section('content')
-    <div class="col-md-10 col-lg-8 col-xl-7">
+
+    <div class="col-md-9">
         <!-- Post preview-->
         <div class="post-preview">
             <a href="post.html">
@@ -67,5 +69,19 @@
         <!-- Pager-->
         <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts
                 →</a></div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header">Kategoriler</div>
+            <ul class="list-group">
+                @foreach($categories as $category)
+                <li class="list-group-item">
+                    <a href="#">{{$category->name}} <b class="ms-2 text-info">12</b></a>
+                </li>
+                @endforeach
+
+            </ul>
+        </div>
+
     </div>
 @endsection

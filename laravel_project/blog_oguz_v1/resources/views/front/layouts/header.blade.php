@@ -7,8 +7,10 @@
     <meta name="author" content="" />
     {{--
         - @yield(‘title’) komutu ile farkli sayfaalrda istegimize uygun deyistire bilmek icin kullanima hazirliyoruz.
-        - @section('title') Ornek baslik buraya yaziliyor @endsection -komutlari arasinda istediyimiz yerde kullaniyoruz --}}
-    <title>@yield('title')</title>
+        - @section('title') Ornek baslik buraya yaziliyor @endsection -komutlari arasinda istediyimiz yerde kullaniyoruz
+         Hicbirsey yazilmazsa default deyer atamak icin title-dan sonra virgul koyup default gelmesi istenen deger yazilir,
+         --}}
+    <title>@yield('title', 'Blog_Default') | Blog</title>
     {{-- {{asset}} - komutu projemizin public klasorunu okuyor, ve bu klasor icerisinde dosyaalrimiz neredyse ekliyoruz  --}}
     <link rel="icon" type="image/x-icon" href="{{asset('front/assets/favicon.ico')}}" />
     <!-- Font Awesome icons (free version)-->
