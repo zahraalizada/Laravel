@@ -32,3 +32,5 @@ use Illuminate\Support\Facades\Route;
  * Ornegin logo uzerine tiklandiginda {{route('homepage')}} - yazarak ilgili sayfaya yonlendirme yapa biliyoruz
  */
 Route::get('/', 'App\Http\Controllers\Front\Homepage@index')->name('homepage');
+Route::get('/iletisim', 'App\Http\Controllers\Front\Homepage@contact')->name('contact');
+Route::get('/iletisim', 'App\Http\Controllers\Front\Homepage@contactpost')->name('contact.post');
