@@ -21,19 +21,19 @@ class Homepage extends Controller
 {
     public function __construct()
     {
-        if(Config::find(1)->active==0){
+        if (Config::find(1)->active == 0) {
             return redirect()->to('site-bakimda')->send();
         }
         //share ile datayi tum viewlere gonderiyoruz
-        view()->share('pages', Page::where('status',1)->orderBy('order', 'ASC')->get());
-        view()->share('categories', Category::where('status',1)->inRandomOrder()->get());
+        view()->share('pages', Page::where('status', 1)->orderBy('order', 'ASC')->get());
+        view()->share('categories', Category::where('status', 1)->inRandomOrder()->get());
     }
 
     public function index()
     {
-        $data['articles'] = Article::with('getCategory')->where('status',1)->whereHas('getCategory',function($query){
-            $query->where('status',1);
-    })->orderBy('created_at', 'DESC')->paginate(5);// articllari tarixe gore siralayiriq, paginate ile seyfeleyirik
+        $data['articles'] = Article::with('getCategory')->where('status', 1)->whereHas('getCategory', function ($query) {
+            $query->where('status', 1);
+        })->orderBy('created_at', 'DESC')->paginate(5);// articllari tarixe gore siralayiriq, paginate ile seyfeleyirik
 
         return view('front.homepage', $data);
     }
@@ -51,7 +51,7 @@ class Homepage extends Controller
     {
         $category = Category::whereSlug($slug)->first() ?? abort(403, 'Boyle bir kategori bulunamadi');
         $data['category'] = $category;
-        $data['articles'] = Article::where('category_id', $category->id)->where('status',1)->orderBy('created_at', 'DESC')->paginate(1);
+        $data['articles'] = Article::where('category_id', $category->id)->where('status', 1)->orderBy('created_at', 'DESC')->paginate(1);
         return view('front.category', $data);
 
     }
@@ -79,7 +79,7 @@ class Homepage extends Controller
         ];
         $validate = Validator::make($request->post(), $rules);
 
-        if($validate->fails()){
+        if ($validate->fails()) {
             return redirect()->route('contact')->withErrors($validate)->withInput();
         }
 
@@ -95,18 +95,15 @@ class Homepage extends Controller
 //        });
 
 
-        Mail::raw(' Mesaji Gonderen: '. $request->name.'<br>
-                    Mesaji Gonderen Mail : ' .$request->email.'<br>
-                    Mesaj Konusu: ' . $request->topic.'<br>
-                    Mesaj : '.$request->message.'<br><br>
-                    Mesaj gonderilme tarihi: '.now().'',function ($message) use($request){
-            $message->from('iletisim@blogsitesi.com','Blog sitesi');
+        Mail::raw(' Mesaji Gonderen: ' . $request->name . '<br>
+                    Mesaji Gonderen Mail : ' . $request->email . '<br>
+                    Mesaj Konusu: ' . $request->topic . '<br>
+                    Mesaj : ' . $request->message . '<br><br>
+                    Mesaj gonderilme tarihi: ' . now() . '', function ($message) use ($request) {
+            $message->from('iletisim@blogsitesi.com', 'Blog sitesi');
             $message->to('furkan@gmail.com');
-            $message->subject($request->name. ' iletisimden mesaj gonderdi!');
+            $message->subject($request->name . ' iletisimden mesaj gonderdi!');
         });
-
-
-
 
 
 //        $contact = new Contact;

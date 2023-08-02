@@ -37,6 +37,7 @@
                         <div class="btn-group" role="group">
                             <a href="{{route('product.show',$rs->id)}}" type="button" class="btn btn-secondary">Detail</a>
                             <a href="{{route('product.edit',$rs->id)}}" type="button" class="btn btn-warning">Edit</a>
+
                             <form action="{{route('product.destroy',$rs->id)}}" method="post" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete product?')">
                                 @csrf
                                 @method('DELETE')
