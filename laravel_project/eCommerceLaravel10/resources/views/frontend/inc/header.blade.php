@@ -62,7 +62,6 @@
                             @endforeach
                         @endif
 
-
                     </ul>
                 </li>
                 <li><a href="{{route('urunler')}}">Ürünler</a></li>
